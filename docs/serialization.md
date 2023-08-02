@@ -15,7 +15,15 @@ The header is structured like the following table:
 | `1` | minor version number |
 | `1` | patch version number |
 | varint | the length of the encoding name |
-| | the encoding name |
+| string | the encoding name |
+| varint | number of errors |
+| varint | byte length of error |
+| string | error string, as byte[] in source encoding |
+| ... | more errors |
+| varint | number of warnings |
+| varint | byte length of warning |
+| string | warning string, as byte[] in source encoding |
+| ... | more warnings |
 | `4` | content pool offset |
 | varint | content pool size |
 
